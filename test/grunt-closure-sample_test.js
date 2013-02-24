@@ -1,6 +1,6 @@
 'use strict';
 
-var grunt_init_closure = require('../lib/grunt-init-closure.js');
+var grunt_init_closure = require('../lib/grunt-closure-sample.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========

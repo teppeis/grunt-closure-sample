@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       },
       lib: {
         files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'nodeunit', 'closureBuilder']
+        tasks: ['jshint:lib', 'nodeunit', 'closureCompiler', 'closureBuilder']
       },
       test: {
         files: '<%= jshint.test.src %>',
@@ -123,6 +123,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-closure-tools');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit', 'closureBuilder']);
+  grunt.registerTask('default', ['jshint', 'nodeunit', 'closureCompiler', 'closureBuilder']);
 
 };
