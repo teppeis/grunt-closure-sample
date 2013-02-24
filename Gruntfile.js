@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       },
       lib: {
         files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'nodeunit', 'closureCompiler']
+        tasks: ['jshint:lib', 'nodeunit', 'closureBuilder']
       },
       test: {
         files: '<%= jshint.test.src %>',
@@ -66,17 +66,52 @@ module.exports = function(grunt) {
           //jscomp_off: [],
           output_wrapper: "'(function(){%output%}).call(this);'"
         }
-
       },
-
       // any name that describes your task
-      targetName: {
+      target: {
         // [OPTIONAL] Target files to compile. Can be a string, an array of strings
         // or grunt file syntax (<config:...>, *)
         src: 'lib/closure.js',
 
         // [OPTIONAL] set an output file
         dest: 'dist/closure.js'
+      }
+    },
+
+    closureBuilder:  {
+      options: {
+        // [REQUIRED] To find the builder executable we need either the path to
+        //    closure library or directly the filepath to the builder:
+        closureLibraryPath: 'closure-library',
+        // [OPTIONAL] You can define an alternative path of the builder.
+        //    If set it trumps 'closureLibraryPath' which will not be required.
+        //builder: 'path/to/closurebuilder.py',
+
+        // [REQUIRED] One of the two following options is required:
+        //inputs: 'string|Array', // input files (can just be the entry point)
+        inputs: 'lib/notepad.js',
+        //namespaces: 'string|Array', // namespaces
+
+        // [OPTIONAL] The location of the compiler.jar
+        // This is required if you set the option "compile" to true.
+        compilerFile: '<%= closureCompiler.options.compilerFile %>',
+
+        // [OPTIONAL] output_mode can be 'list', 'script' or 'compiled'.
+        //    If compile is set to true, 'compiled' mode is enforced.
+        //    Default is 'script'.
+        //output_mode: 'list',
+
+        // [OPTIONAL] if we want builder to perform compile
+        compile: true, // boolean
+        compilerOpts: '<%= closureCompiler.options.compilerOpts %>'
+      },
+      // any name that describes your operation
+      target: {
+        // [REQUIRED] paths to be traversed to build the dependencies
+        src: ['closure-library/', 'lib/'],
+
+        // [OPTIONAL] if not set, will output to stdout
+        dest: 'dist/notepad.js'
       }
     }
   });
@@ -88,6 +123,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-closure-tools');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit', 'closureCompiler']);
+  grunt.registerTask('default', ['jshint', 'nodeunit', 'closureBuilder']);
 
 };
