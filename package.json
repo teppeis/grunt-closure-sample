@@ -1,0 +1,37 @@
+{
+  "name": "grunt-init-closure",
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/teppeis/grunt-init-closure",
+  "author": {
+    "name": "teppeis",
+    "email": "teppeis@gmail.com",
+    "url": "http://twitter.com/teppeis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/teppeis/grunt-init-closure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teppeis/grunt-init-closure/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/teppeis/grunt-init-closure/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/grunt-init-closure",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.2.0"
+  },
+  "keywords": []
+}
