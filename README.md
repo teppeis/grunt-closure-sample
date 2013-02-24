@@ -1,13 +1,13 @@
-# grunt-init-closure
+# grunt-closure-sample
 
 The best project ever.
 
 ## Getting Started
-Install the module with: `npm install grunt-init-closure`
+Install the module with: `npm install grunt-closure-sample`
 
 ```javascript
-var grunt_init_closure = require('grunt-init-closure');
-grunt_init_closure.awesome(); // "awesome"
+var grunt_closure_sample = require('grunt-closure-sample');
+grunt_closure_sample.awesome(); // "awesome"
 ```
 
 ## Documentation

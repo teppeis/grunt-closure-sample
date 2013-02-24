@@ -1,6 +1,6 @@
 'use strict';
 
-var grunt_init_closure = require('../lib/grunt-closure-sample.js');
+var grunt_closure_sample = require('../lib/grunt-closure-sample.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -30,7 +30,7 @@ exports['awesome'] = {
   'no args': function(test) {
     test.expect(1);
     // tests here
-    test.equal(grunt_init_closure.awesome(), 'awesome', 'should be awesome.');
+    test.equal(grunt_closure_sample.awesome(), 'awesome', 'should be awesome.');
     test.done();
   },
 };
