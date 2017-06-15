@@ -1,5 +1,7 @@
 # grunt-closure-sample
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/teppeis/grunt-closure-sample.svg)](https://greenkeeper.io/)
+
 The best project ever.
 
 ## Getting Started
